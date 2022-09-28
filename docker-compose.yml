@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  interview_task_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - interview-task
+    depends_on:
+      - interview_task_db
+
+  interview_task_db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: interview_task_db_password
+    volumes:
+      - /var/lib/postgresql/data
+    ports:
+      - 5432
+    networks:
+      - interview-task
+
+networks:
+  interview-task:

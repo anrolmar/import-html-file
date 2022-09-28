@@ -1,0 +1,21 @@
+{
+  "name": "interview-task-2021",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "docker-compose up"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.13",
+    "@types/node": "^18.7.20",
+    "nodemon": "2.0.12",
+    "ts-node": "10.2.1",
+    "typescript": "4.4.3"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "knex": "0.95.11",
+    "pg": "8.7.1"
+  }
+}
